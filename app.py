@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-	return render_template('index.html')
+	return render_template('my_file.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -68,7 +68,7 @@ def predict():
         data = np.array([temp_array])
         my_prediction = int(regressor.predict(data)[0])
               
-        return render_template('result.html', lower_limit = my_prediction-10, upper_limit = my_prediction+5)
+        return render_template('my_file2.html', lower_limit = my_prediction-10, upper_limit = my_prediction+5)
 
 
 
